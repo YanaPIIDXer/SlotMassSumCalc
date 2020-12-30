@@ -113,6 +113,34 @@ namespace SlotMassSumCalc.Models
 		public event PropertyChangedEventHandler PropertyChanged = delegate { };
 
 		/// <summary>
+		/// デフォルトコンストラクタ
+		/// </summary>
+		public CountData() { }
+
+		/// <summary>
+		/// フルコンストラクタ
+		/// </summary>
+		/// <param name="Games">ゲーム数</param>
+		/// <param name="Bigs">BIG回数</param>
+		/// <param name="Regs">REG回数</param>
+		public CountData(int Games, int Bigs, int Regs)
+		{
+			this.Games = Games;
+			this.Bigs = Bigs;
+			this.Regs = Regs;
+			UpdateProbs();
+		}
+
+		/// <summary>
+		/// 複製
+		/// </summary>
+		/// <returns>複製したデータ</returns>
+		public CountData Clone()
+		{
+			return new CountData(Games, Bigs, Regs);
+		}
+
+		/// <summary>
 		/// 各種確率の更新
 		/// </summary>
 		private void UpdateProbs()

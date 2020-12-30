@@ -1,14 +1,16 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:SlotMassSumCalc.Controls"
              x:Class="SlotMassSumCalc.Controls.CalcList">
-  <ContentView.Content>
-      <StackLayout>
+    <ContentView.Content>
+        <StackLayout>
             <ScrollView>
                 <StackLayout x:Name="ListBody">
                 </StackLayout>
             </ScrollView>
             <Button x:Name="AddButton" Text="追加" Clicked="AddButton_Clicked" />
+            <Label Text="シマ合算" />
+            <controls:ProbabilityView x:Name="MassSumProb" />
         </StackLayout>
-  </ContentView.Content>
+    </ContentView.Content>
 </ContentView>
