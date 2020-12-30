@@ -25,7 +25,12 @@ namespace SlotMassSumCalc.Controls
 
 		private void AddButton_Clicked(object sender, EventArgs e)
 		{
-			ListBody.Children.Add(new CalcListItem());
+			var Item = new CalcListItem();
+			Item.OnRemove = (Removed) =>
+			{
+				ListBody.Children.Remove(Removed);
+			};
+			ListBody.Children.Add(Item);
 		}
 	}
 }

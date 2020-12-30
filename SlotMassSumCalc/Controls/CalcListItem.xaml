@@ -2,9 +2,12 @@
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SlotMassSumCalc.Controls.CalcListItem">
-  <ContentView.Content>
-      <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
-  </ContentView.Content>
+    <ContentView.Content>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="ゲーム数" />
+            <Label Text="ＢＩＧ回数" />
+            <Label Text="ＲＥＧ回数" />
+            <Button Text="消去" Clicked="Button_Clicked"></Button>
+        </StackLayout>
+    </ContentView.Content>
 </ContentView>
