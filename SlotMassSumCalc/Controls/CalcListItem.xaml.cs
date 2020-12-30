@@ -25,7 +25,7 @@ namespace SlotMassSumCalc.Controls
 		/// <summary>
 		/// データ
 		/// </summary>
-		private CountData Data = new CountData();
+		protected CountData Data { get; } = new CountData();
 
 		/// <summary>
 		/// コンストラクタ
@@ -36,6 +36,7 @@ namespace SlotMassSumCalc.Controls
 			GamesEntry.BindingContext = Data;
 			BigsEntry.BindingContext = Data;
 			RegsEntry.BindingContext = Data;
+			ProbView.SetData(Data);
 		}
 
 		private void Button_Clicked(object sender, EventArgs e)

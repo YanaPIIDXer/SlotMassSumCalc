@@ -6,15 +6,15 @@
       <StackLayout Orientation="Horizontal" Spacing="30">
             <StackLayout Orientation="Horizontal">
                 <Label Text="BIG" />
-                <Label Text="1/100" />
+                <Label x:Name="BigProb" Text="{Binding StringFormat='1/{0:F1}', Path=BigProb}" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="REG" />
-                <Label Text="1/100" />
+                <Label x:Name="RegProb" Text="{Binding StringFormat='1/{0:F1}', Path=RegProb}" />
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="合算" />
-                <Label Text="1/100" />
+                <Label x:Name="TotalProb" Text="{Binding StringFormat='1/{0:F1}', Path=TotalProb}" />
             </StackLayout>
         </StackLayout>
   </ContentView.Content>

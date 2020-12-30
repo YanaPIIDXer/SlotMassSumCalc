@@ -16,10 +16,11 @@ namespace SlotMassSumCalc.Models
 		public int Games
 		{
 			get { return _Games; }
-			private set
+			set
 			{
 				_Games = value;
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Games)));
+				UpdateProbs();
 			}
 		}
 		private int _Games = 0;
@@ -30,10 +31,11 @@ namespace SlotMassSumCalc.Models
 		public int Bigs
 		{
 			get { return _Bigs; }
-			private set
+			set
 			{
 				_Bigs = value;
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Bigs)));
+				UpdateProbs();
 			}
 		}
 		private int _Bigs = 0;
@@ -44,17 +46,81 @@ namespace SlotMassSumCalc.Models
 		public int Regs
 		{
 			get { return _Regs; }
-			private set
+			set
 			{
 				_Regs = value;
 				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Regs)));
+				UpdateProbs();
 			}
 		}
 		private int _Regs = 0;
 
 		/// <summary>
+		/// BIG確率
+		/// </summary>
+		public float BigProb
+		{
+			get
+			{
+				return _BigProb;
+			}
+			set
+			{
+				_BigProb = value;
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(BigProb)));
+			}
+		}
+		private float _BigProb = 0.0f;
+
+		/// <summary>
+		/// REG確率
+		/// </summary>
+		public float RegProb
+		{
+			get
+			{
+				return _RegProb;
+			}
+			set
+			{
+				_RegProb = value;
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(RegProb)));
+			}
+		}
+		private float _RegProb = 0.0f;
+
+		/// <summary>
+		/// 合算
+		/// </summary>
+		public float TotalProb
+		{
+			get
+			{
+				return _TotalProb;
+			}
+			set
+			{
+				_TotalProb = value;
+				PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TotalProb)));
+
+			}
+		}
+		private float _TotalProb = 0.0f;
+
+		/// <summary>
 		/// プロパティ変更イベント
 		/// </summary>
 		public event PropertyChangedEventHandler PropertyChanged = delegate { };
+
+		/// <summary>
+		/// 各種確率の更新
+		/// </summary>
+		private void UpdateProbs()
+		{
+			BigProb = (Bigs != 0) ? (float)Games / Bigs : 0.0f;
+			RegProb = (Regs != 0) ? (float)Games / Regs : 0.0f;
+			if (BigProb == 0.0f || RegProb == 0.0f) TotalProb = Math.Max(BigProb, RegProb);
+			else TotalProb = (BigProb * RegProb) / (BigProb + RegProb);
+		}
 	}
 }
