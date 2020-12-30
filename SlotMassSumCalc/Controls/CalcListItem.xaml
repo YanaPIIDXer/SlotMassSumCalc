@@ -7,15 +7,15 @@
             <StackLayout Orientation="Horizontal">
                 <StackLayout Orientation="Vertical" WidthRequest="200">
                     <Label Text="ゲーム数" />
-                    <Entry x:Name="GamesEntry" Text="{Binding Path=Games}" ReturnType="Next" />
+                    <Entry x:Name="GamesEntry" Text="{Binding Path=Games}" Keyboard="Numeric" ReturnType="Next" />
                 </StackLayout>
                 <StackLayout Orientation="Vertical" WidthRequest="120">
                     <Label Text="ＢＩＧ回数" />
-                    <Entry x:Name="BigsEntry" Text="{Binding Path=Bigs}" ReturnType="Next" />
+                    <Entry x:Name="BigsEntry" Text="{Binding Path=Bigs}" Keyboard="Numeric" ReturnType="Next" />
                 </StackLayout>
                 <StackLayout Orientation="Vertical" WidthRequest="120">
                     <Label Text="ＲＥＧ回数" />
-                    <Entry x:Name="RegsEntry" Text="{Binding Path=Regs}" ReturnType="Next" />
+                    <Entry x:Name="RegsEntry" Text="{Binding Path=Regs}" Keyboard="Numeric" ReturnType="Next" />
                 </StackLayout>
                 <Button Text="消去" Clicked="Button_Clicked"></Button>
             </StackLayout>
