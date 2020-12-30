@@ -4,15 +4,15 @@
              x:Class="SlotMassSumCalc.Controls.CalcListItem">
     <ContentView.Content>
         <StackLayout Orientation="Horizontal">
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" WidthRequest="200">
                 <Label Text="ゲーム数" />
                 <Entry x:Name="GamesEntry" Text="{Binding Path=Games}" ReturnType="Next" />
             </StackLayout>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" WidthRequest="120">
                 <Label Text="ＢＩＧ回数" />
                 <Entry x:Name="BigsEntry" Text="{Binding Path=Bigs}" ReturnType="Next" />
             </StackLayout>
-            <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Vertical" WidthRequest="120">
                 <Label Text="ＲＥＧ回数" />
                 <Entry x:Name="RegsEntry" Text="{Binding Path=Regs}" ReturnType="Next" />
             </StackLayout>
