@@ -21,11 +21,29 @@ namespace SlotMassSumCalc.Controls
 		public Action<CalcListItem> OnRemove { set; private get; }
 
 		/// <summary>
+		/// ゲーム数
+		/// </summary>
+		public int Games { get; private set; } = 0;
+
+		/// <summary>
+		/// BIG回数
+		/// </summary>
+		public int Bigs { get; private set; } = 0;
+
+		/// <summary>
+		/// REG回数
+		/// </summary>
+		public int Regs { get; private set; } = 0;
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		public CalcListItem()
 		{
 			InitializeComponent();
+			GamesEntry.BindingContext = this;
+			BigsEntry.BindingContext = this;
+			RegsEntry.BindingContext = this;
 		}
 
 		private void Button_Clicked(object sender, EventArgs e)
