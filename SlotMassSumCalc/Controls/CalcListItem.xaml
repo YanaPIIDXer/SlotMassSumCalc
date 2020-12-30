@@ -1,22 +1,25 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:controls="clr-namespace:SlotMassSumCalc.Controls"
              x:Class="SlotMassSumCalc.Controls.CalcListItem">
     <ContentView.Content>
-        <StackLayout Orientation="Horizontal">
-            <StackLayout Orientation="Vertical" WidthRequest="200">
-                <Label Text="ゲーム数" />
-                <Entry x:Name="GamesEntry" Text="{Binding Path=Games}" ReturnType="Next" />
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <StackLayout Orientation="Vertical" WidthRequest="200">
+                    <Label Text="ゲーム数" />
+                    <Entry x:Name="GamesEntry" Text="{Binding Path=Games}" ReturnType="Next" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" WidthRequest="120">
+                    <Label Text="ＢＩＧ回数" />
+                    <Entry x:Name="BigsEntry" Text="{Binding Path=Bigs}" ReturnType="Next" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical" WidthRequest="120">
+                    <Label Text="ＲＥＧ回数" />
+                    <Entry x:Name="RegsEntry" Text="{Binding Path=Regs}" ReturnType="Next" />
+                </StackLayout>
+                <Button Text="消去" Clicked="Button_Clicked"></Button>
             </StackLayout>
-            <StackLayout Orientation="Vertical" WidthRequest="120">
-                <Label Text="ＢＩＧ回数" />
-                <Entry x:Name="BigsEntry" Text="{Binding Path=Bigs}" ReturnType="Next" />
-            </StackLayout>
-            <StackLayout Orientation="Vertical" WidthRequest="120">
-                <Label Text="ＲＥＧ回数" />
-                <Entry x:Name="RegsEntry" Text="{Binding Path=Regs}" ReturnType="Next" />
-            </StackLayout>
-            <Button Text="消去" Clicked="Button_Clicked"></Button>
+            <controls:ProbabilityView x:Name="ProbView" />
         </StackLayout>
     </ContentView.Content>
 </ContentView>

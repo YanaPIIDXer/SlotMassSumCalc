@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SlotMassSumCalc.Controls.ProbabilityView">
+  <ContentView.Content>
+      <StackLayout Orientation="Horizontal" Spacing="30">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="BIG" />
+                <Label Text="1/100" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="REG" />
+                <Label Text="1/100" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="合算" />
+                <Label Text="1/100" />
+            </StackLayout>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>
