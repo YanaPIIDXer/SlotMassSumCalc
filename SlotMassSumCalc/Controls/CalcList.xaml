@@ -4,7 +4,11 @@
              x:Class="SlotMassSumCalc.Controls.CalcList">
   <ContentView.Content>
       <StackLayout>
-          <Label Text="Hello Xamarin.Forms!" />
-      </StackLayout>
+            <ScrollView>
+                <StackLayout x:Name="ListBody">
+                </StackLayout>
+            </ScrollView>
+            <Button x:Name="AddButton" Text="追加" Clicked="AddButton_Clicked" />
+        </StackLayout>
   </ContentView.Content>
 </ContentView>
