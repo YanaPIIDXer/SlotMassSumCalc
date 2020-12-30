@@ -25,6 +25,9 @@ namespace SlotMassSumCalc.Controls
 		{
 			InitializeComponent();
 			MassSumProb.SetData(TotalData);
+			GamesLabel.BindingContext = TotalData;
+			BigsLabel.BindingContext = TotalData;
+			RegsLabel.BindingContext = TotalData;
 		}
 
 		private void AddButton_Clicked(object sender, EventArgs e)

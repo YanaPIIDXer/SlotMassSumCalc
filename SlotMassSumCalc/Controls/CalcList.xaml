@@ -10,6 +10,20 @@
             </ScrollView>
             <Button x:Name="AddButton" Text="追加" Clicked="AddButton_Clicked" />
             <Label Text="シマ合算" />
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="回転数" />
+                    <Label x:Name="GamesLabel" Text="{Binding Path=Games}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="BIG回数" />
+                    <Label x:Name="BigsLabel" Text="{Binding Path=Bigs}" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="REG回数" />
+                    <Label x:Name="RegsLabel" Text="{Binding Path=Regs}" />
+                </StackLayout>
+            </StackLayout>
             <controls:ProbabilityView x:Name="MassSumProb" />
         </StackLayout>
     </ContentView.Content>
